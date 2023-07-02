@@ -1,11 +1,15 @@
 {
-  "name": "@hemul/reuploader",
+  "name": "@h3mul/reuploader",
   "version": "1.0.0",
-  "description": "A simple library for reuploading a file stream source to a new destination",
-  "main": "src/index.ts",
+  "description": "A simple library for reuploading a data stream source to a new destination",
+  "homepage": "https://github.com/H3mul/reuploader#readme",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "del-cli dist && tsc"
+    "pub": "npm version patch && npm publish",
+    "build": "del-cli dist && tsc",
+    "prepare": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -16,12 +20,12 @@
     "del-cli": "^5.0.0",
     "readline-promise": "^1.0.5",
     "ts-node": "^10.9.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "winston": "^3.9.0"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
     "googleapis": "^120.0.0",
-    "got": "^13.0.0",
-    "winston": "^3.9.0"
+    "got": "^13.0.0"
   }
 }

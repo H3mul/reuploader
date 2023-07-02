@@ -16,6 +16,7 @@ export interface YoutubeUploadRequest extends UploadRequest {
 }
 
 export interface YoutubeUploadResult extends UploadResult {
+    id: string;
     videoUrl: string;
 }
 
@@ -69,6 +70,7 @@ export class YoutubeUploader extends UploaderBase {
     }
 
     async upload(req: YoutubeUploadRequest): Promise<YoutubeUploadResult> {
+        // Upload the video
         const videoId = await this.insertVideo(req);
         if (!videoId) {
             throw new Error('Failed to insert video');
@@ -87,6 +89,9 @@ export class YoutubeUploader extends UploaderBase {
             }
         }
 
-        return { videoUrl: `https://www.youtube.com/watch?v=${videoId}` };
+        return {
+            id: videoId,
+            videoUrl: `https://www.youtube.com/watch?v=${videoId}`
+        };
     }
 }
