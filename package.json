@@ -1,6 +1,6 @@
 {
   "name": "@h3mul/reuploader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple library for reuploading a data stream source to a new destination",
   "homepage": "https://github.com/H3mul/reuploader#readme",
   "main": "dist/index.js",
